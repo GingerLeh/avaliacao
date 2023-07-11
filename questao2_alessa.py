@@ -24,8 +24,8 @@ def calculate_percentage_above_age_with_high_cholesterol_and_high_sugar(data, ag
     return percentage
 
 def calculate_relation_hypertrofy(data):
-    df_novo = data[data['chol'], data['restecg'], data['fbs']]
-    df_novo.to_csv('df_novo.csv', index=False)
+    df_final = data[['fbs','chol','restecg']]
+    print (df_final.corr())
 
 
 # Carregar dados do arquivo CSV usando o Pandas
