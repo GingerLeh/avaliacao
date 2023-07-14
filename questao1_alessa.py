@@ -29,9 +29,6 @@ def get_package_info(package_name):
 
 # Restante do código...
 
-
-# Restante do código...
-
 # Função para criar o arquivo CSV com as informações dos pacotes
 def create_package_csv():
     packages = [
