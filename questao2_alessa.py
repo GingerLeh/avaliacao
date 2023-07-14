@@ -24,8 +24,8 @@ def calculate_percentage_above_age_with_high_cholesterol_and_high_sugar(data, ag
     return percentage
 
 def calculate_relation_hypertrofy(data):
-    df_novo = data[data['chol'], data['restecg'], data['fbs']]
-    df_novo.to_csv('df_novo.csv', index=False)
+    df_final = data[['fbs','chol','restecg']]
+    return df_final.corr()
 
 
 # Carregar dados do arquivo CSV usando o Pandas
@@ -39,4 +39,5 @@ print(f"Porcentagem de pessoas acima de 40 anos com colesterol alto: {percentage
 percentage_above_40_with_high_cholesterol_and_high_sugar = calculate_percentage_above_age_with_high_cholesterol_and_high_sugar(data, 40)
 print(f"Porcentagem de pessoas acima de 40 anos com colesterol alto e alto teor de açúcar no sangue: {percentage_above_40_with_high_cholesterol_and_high_sugar}%")
 
+# Problema 3: Relação colesterol alto, alto teor de açucar no sangue e hipertrofia ventricular esquerda
 print(calculate_relation_hypertrofy(data))
